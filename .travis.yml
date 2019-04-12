@@ -3,9 +3,10 @@ language: go
 services:
   - docker
 
-# branches:
-#   only:
-#   - /^v\d+\.\d+\.\d+$/
+branches:
+  only:
+  - master
+  - /^v\d+\.\d+\.\d+/
 
 env:
   - IMAGE_NAME=claranet/logspout
