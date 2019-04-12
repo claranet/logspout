@@ -13,14 +13,8 @@ env:
 
 script:
   - docker build -t $IMAGE_NAME:latest .
-#  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TRAVIS_BRANCH
+  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TRAVIS_BRANCH
+  - docker login --username ${DOCKERHUB_USERNAME} --password ${DOCKERHUB_PASSWORD}
+  - docker push $IMAGE_NAME:latest 
+  - docker push $IMAGE_NAME:$TRAVIS_BRANCH
   
-# deploy:
-#   provider: releases
-#   skip_cleanup: true
-#   api_key:
-#     secure: "$GITHUBTOKEN"
-#   file_glob: true
-#   file: bin/*
-#   on:
-#     tags: true
