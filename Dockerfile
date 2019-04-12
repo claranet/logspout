@@ -8,13 +8,13 @@ COPY . $GOPATH/src/github.com/claranet/logspout/
 WORKDIR $GOPATH/src/github.com/claranet/logspout/
 
 RUN go get -v
-RUN go build -ldflags "-X main.Version=v1.0.0-rc2" -o $GOPATH/bin/logspout
+RUN go build -ldflags "-X main.Version=v1.0.0-rc3" -o $GOPATH/bin/logspout
 
 ####################################
 
 FROM alpine:3.9
 
-LABEL version="v1.0.0-rc2"
+LABEL version="v1.0.0-rc3"
 LABEL maintainer="Martin Weber <martin.weber@de.clara.net>"
 LABEL description="Logspout is a log router for Docker containers that runs inside Docker. It attaches to all containers on a host, then routes their logs wherever you want. It also has an extensible module system."
 

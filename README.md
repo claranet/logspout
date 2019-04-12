@@ -1,6 +1,6 @@
 # logspout
 
-[Travis-CI](!https://travis-ci.org/claranet/logspout.svg?branch=[Travis-CI](!https://travis-ci.org/claranet/logspout.svg?branch=1.0.0-rc2))
+[Travis-CI](!https://travis-ci.org/claranet/logspout.svg?branch=[Travis-CI](!https://travis-ci.org/claranet/logspout.svg?branch=[Travis-CI](!https://travis-ci.org/claranet/logspout.svg?branch=1.0.0-rc3)))
 [![Docker pulls](https://img.shields.io/docker/pulls/claranet/logspout.svg)](https://hub.docker.com/r/claranet/logspout/)
 
 > This Project is a FORK of [gliderlabs/logspout] Project! We merget the GELF-Module into it and did some changes for our company.
