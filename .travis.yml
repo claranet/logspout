@@ -8,7 +8,7 @@ services:
 #   - /^v\d+\.\d+\.\d+$/
 
 env:
-  IMAGE_NAME = "claranet/logspout"
+  - IMAGE_NAME = "claranet/logspout"
 
 script:
   - docker build -t $IMAGE_NAME:latest .
