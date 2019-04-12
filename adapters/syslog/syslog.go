@@ -15,7 +15,7 @@ import (
 	"text/template"
 	"time"
 
-	"router"
+	"github.com/claranet/logspout/router"
 )
 
 const defaultRetryCount = 10

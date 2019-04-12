@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"text/template"
 
-	"router"
+	"github.com/claranet/logspout/router"
 )
 
 func init() {

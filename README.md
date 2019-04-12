@@ -1,10 +1,8 @@
 # logspout
 
-[![CircleCI](https://img.shields.io/circleci/project/claranet/logspout/release.svg)](https://circleci.com/gh/claranet/logspout)
 [![Docker pulls](https://img.shields.io/docker/pulls/claranet/logspout.svg)](https://hub.docker.com/r/claranet/logspout/)
-[![IRC Channel](https://img.shields.io/badge/irc-%23claranet-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/#claranet)
 
-> Docker Hub automated builds for `claranet/logspout:latest` and `progrium/logspout:latest` are now pointing to the `release` branch. For `master`, use `claranet/logspout:master`. Individual versions are also available as saved images in [releases](https://github.com/claranet/logspout/releases).
+> This Project is a FORK of [gliderlabs/logspout] Project! We merget the GELF-Module into it and did some changes for our company.
 
 Logspout is a log router for Docker containers that runs inside Docker. It attaches to all containers on a host, then routes their logs wherever you want. It also has an extensible module system.
 
@@ -17,11 +15,7 @@ For now it only captures stdout and stderr, but a module to collect container sy
 Logspout is a very small Docker container (15.2MB virtual, based on [Alpine](https://github.com/claranet/docker-alpine)). Pull the latest release from the index:
 
 	$ docker pull claranet/logspout:latest
-
-You can also download and load a specific version:
-
-	$ curl -s dl.claranet.com/logspout/v2.tgz | docker load
-
+s
 ## Using logspout
 
 #### Route all container output to remote syslog

@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 
-	"router"
+	"github.com/claranet/logspout/router"
 	"github.com/gorilla/mux"
 	"golang.org/x/net/websocket"
 )

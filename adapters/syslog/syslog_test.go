@@ -15,12 +15,12 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/claranet/logspout/router"
 	docker "github.com/fsouza/go-dockerclient"
-	"router"
 
-	_ "transports/tcp"
-	_ "transports/tls"
-	_ "transports/udp"
+	_ "github.com/claranet/logspout/transports/tcp"
+	_ "github.com/claranet/logspout/transports/tls"
+	_ "github.com/claranet/logspout/transports/udp"
 )
 
 const (

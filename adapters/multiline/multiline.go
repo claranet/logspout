@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/fsouza/go-dockerclient"
-	"router"
+	"github.com/claranet/logspout/router"
 )
 
 const (
@@ -173,7 +173,7 @@ func (a *Adapter) Stream(logstream chan *router.Message) {
 				a.buffers[cID] = message
 			} else {
 				isLastLine := a.isLastLine(message)
-				
+
 				if oldExists {
 					old.Data += a.separator + message.Data
 					message = old

@@ -3,8 +3,8 @@ package tcp
 import (
 	"net"
 
-	"adapters/raw"
-	"router"
+	"github.com/claranet/logspout/adapters/raw"
+	"github.com/claranet/logspout/router"
 )
 
 func init() {

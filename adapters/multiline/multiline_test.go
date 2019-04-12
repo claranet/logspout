@@ -7,8 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fsouza/go-dockerclient"
-	"router"
+	"github.com/claranet/logspout/router"
 )
 
 type dummyAdapter struct {

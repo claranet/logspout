@@ -12,8 +12,8 @@ import (
 	"os"
 	"strings"
 
-	"adapters/raw"
-	"router"
+	"github.com/claranet/logspout/adapters/raw"
+	"github.com/claranet/logspout/router"
 )
 
 const (

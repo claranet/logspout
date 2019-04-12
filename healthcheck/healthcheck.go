@@ -3,7 +3,7 @@ package healthcheck
 import (
 	"net/http"
 
-	"router"
+	"github.com/claranet/logspout/router"
 	"github.com/gorilla/mux"
 )
 

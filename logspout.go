@@ -7,7 +7,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"router"
+	"github.com/claranet/logspout/router"
 )
 
 // Version is the running version of logspout
