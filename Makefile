@@ -23,7 +23,7 @@ dev: build-dev
 	@docker run --rm \
 		-e DEBUG=true \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-v $(PWD):/go/src/github.com/gliderlabs/logspout \
+		-v $(PWD):/go/src/github.com/claranet/logspout \
 		-p 8000:80 \
 		-e ROUTE_URIS=$(ROUTE) \
 		$(NAME):dev
@@ -34,7 +34,7 @@ build:
 	docker save $(NAME):$(VERSION) | gzip -9 > build/$(NAME)_$(VERSION).tgz
 
 build-custom:
-	docker tag $(NAME):$(VERSION) gliderlabs/$(NAME):master
+	docker tag $(NAME):$(VERSION) claranet/$(NAME):master
 	cd custom && docker build -t $(NAME):custom .
 
 lint:
@@ -47,7 +47,7 @@ lint:
 test: build-dev
 	docker run \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-v $(PWD):/go/src/github.com/gliderlabs/logspout \
+		-v $(PWD):/go/src/github.com/claranet/logspout \
 		-e TEST_ARGS="" \
 		-e DEBUG=$(DEBUG) \
 		$(NAME):dev make -e test-direct
@@ -86,7 +86,7 @@ test-healthcheck:
 test-custom:
 	docker run --name $(NAME)-custom $(NAME):custom || true
 	docker logs $(NAME)-custom | grep -q logstash
-	docker rmi gliderlabs/$(NAME):master || true
+	docker rmi claranet/$(NAME):master || true
 	docker rm $(NAME)-custom || true
 
 test-tls-custom:
@@ -103,7 +103,7 @@ release:
 	rm -rf release && mkdir release
 	go get github.com/progrium/gh-release/...
 	cp build/* release
-	gh-release create gliderlabs/$(NAME) $(VERSION) \
+	gh-release create claranet/$(NAME) $(VERSION) \
 		$(shell git rev-parse --abbrev-ref HEAD) $(VERSION)
 
 circleci:

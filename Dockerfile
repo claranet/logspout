@@ -1,11 +1,22 @@
-FROM alpine:3.8
+FROM golang:1.12-alpine AS builder
+
+ARG GOOS=linux
+ARG GOARCH=amd64
+
+COPY . $GOPATH/src/github.com/claranet/logspout/
+WORKDIR $GOPATH/src/github.com/claranet/logspout/
+
+RUN go get -v
+RUN go build -o $GOPATH/bin/logspout
+
+####################################
+
+FROM alpine:3.9
+
+#RUN  apk add --update ca-certificates
+
+COPY --from=builder /go/bin/logspout /bin/logspout
+
 ENTRYPOINT ["/bin/logspout"]
 VOLUME /mnt/routes
 EXPOSE 80
-
-COPY . /src
-RUN cd /src && ./build.sh "$(cat VERSION)"
-
-ONBUILD COPY ./build.sh /src/build.sh
-ONBUILD COPY ./modules.go /src/modules.go
-ONBUILD RUN cd /src && chmod +x ./build.sh && sleep 1 && sync && ./build.sh "$(cat VERSION)-custom"

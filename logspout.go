@@ -7,7 +7,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/gliderlabs/logspout/router"
+	"router"
 )
 
 // Version is the running version of logspout
@@ -27,7 +27,7 @@ func main() {
 		os.Exit(0)
 	}
 
-	fmt.Printf("# logspout %s by gliderlabs\n", Version)
+	fmt.Printf("# logspout %s by claranet\n", Version)
 	fmt.Printf("# adapters: %s\n", strings.Join(router.AdapterFactories.Names(), " "))
 	fmt.Printf("# options : ")
 	if getopt("DEBUG", "") != "" {
