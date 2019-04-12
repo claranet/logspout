@@ -1,7 +1,8 @@
-FROM golang:1.12-alpine AS builder
+FROM golang:1.12 AS builder
 
 ARG GOOS=linux
 ARG GOARCH=amd64
+ARG CGO_ENABLED=0
 
 COPY . $GOPATH/src/github.com/claranet/logspout/
 WORKDIR $GOPATH/src/github.com/claranet/logspout/
