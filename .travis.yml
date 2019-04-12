@@ -1,0 +1,25 @@
+language: go
+
+services:
+  - docker
+
+# branches:
+#   only:
+#   - /^v\d+\.\d+\.\d+$/
+
+env:
+  IMAGE_NAME = "claranet/logspout"
+
+script:
+  - docker build -t $IMAGE_NAME:latest .
+#  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TRAVIS_BRANCH
+  
+# deploy:
+#   provider: releases
+#   skip_cleanup: true
+#   api_key:
+#     secure: "$GITHUBTOKEN"
+#   file_glob: true
+#   file: bin/*
+#   on:
+#     tags: true
