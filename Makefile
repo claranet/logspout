@@ -1,7 +1,7 @@
 .PHONY: build
 
 NAME=logspout
-VERSION=v1.0.0
+VERSION=v1.0.1
 # max image size of 40MB
 MAX_IMAGE_SIZE := 40000000
 
